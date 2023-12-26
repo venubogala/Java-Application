@@ -1,0 +1,11 @@
+// Save Settings
+    Properties saveProps = new Properties();
+    saveProps.setProperty("path1", "/somethingpath1");
+    saveProps.setProperty("path2", "/somethingpath2");
+    saveProps.storeToXML(new FileOutputStream("settings.xml"), "");
+
+    // Load Settings
+    Properties loadProps = new Properties();
+    loadProps.loadFromXML(new FileInputStream("settings.xml"));
+    String path1 = loadProps.getProperty("path1");
+    String path2 = loadProps.getProperty("path2");
